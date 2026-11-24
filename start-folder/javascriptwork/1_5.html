@@ -1,0 +1,203 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>電卓</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            background-color: #f5f5fa;
+            color: #333;
+        }
+
+        /* ヘッダー */
+        header {
+            background-color: #4848bd;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+
+        header h1 {
+            margin: 0 0 20px;
+            font-size: 30px;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            opacity: 0.7;
+        }
+
+        /* 電卓エリア */
+        main {
+            min-height: 650px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        .calculator {
+            width: 100%;
+            max-width: 490px;
+            padding: 40px 30px;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        .calculator h2 {
+            margin-top: 0;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 30px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 12px;
+            font-weight: bold;
+        }
+
+        input,
+        select {
+            width: 155px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 7px;
+            font-size: 16px;
+        }
+
+        /* 計算結果 */
+        .result {
+            margin-top: 35px;
+            padding: 20px;
+            background-color: #f0f0fa;
+            border-radius: 8px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+
+        .result p {
+            margin: 5px 0;
+        }
+
+        #calculation {
+            font-size: 16px;
+        }
+
+        #answer {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4848bd;
+        }
+
+        .error {
+            color: #d33;
+            font-weight: bold;
+        }
+
+        /* フッター */
+        footer {
+            background-color: #4848bd;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        @media (max-width: 480px) {
+            nav {
+                gap: 15px;
+            }
+
+            .calculator {
+                padding: 30px 15px;
+            }
+        }
+    </style>
+    <script src="1_5.js" defer></script>
+</head>
+
+<body>
+
+    <header>
+        <h1>電卓</h1>
+
+        <nav>
+            <a href="../work.html">ホーム</a>
+            <a href="../contact.html">お問い合わせ</a>
+            <a href="1_3function.html">課題1-3</a>
+            <a href="1_4.html">課題1-4</a>
+            <a href="1_5.html">電卓</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="calculator">
+            <h2>計算式</h2>
+
+            <div class="form-group">
+                <label for="value1">値1</label>
+                <input
+                    type="number"
+                    id="value1"
+                    step="any"
+                    placeholder="値を入力"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="value2">値2</label>
+                <input
+                    type="number"
+                    id="value2"
+                    step="any"
+                    placeholder="値を入力"
+                >
+            </div>
+
+            <div class="form-group">
+                <label for="operator">演算子</label>
+                <select id="operator">
+                    <option value="+">足し算</option>
+                    <option value="-">引き算</option>
+                    <option value="*">掛け算</option>
+                    <option value="/">割り算</option>
+                </select>
+            </div>
+
+            <div class="result" aria-live="polite">
+                <p id="calculation">計算式がここに表示されます</p>
+                <p id="answer">結果がここに表示されます</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 私のポートフォリオ</p>
+    </footer>
+
+</body>
+</html>
