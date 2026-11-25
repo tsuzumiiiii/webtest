@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub検索</title>
+    <style>
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: sans-serif;
+            color: #333;
+            background: #ffffff;
+        }
+        header {
+            background: #4848bd;
+            color: white;
+            text-align: center;
+            padding: 25px 15px;
+        }
+        header h1 { margin: 0 0 20px; font-size: 30px; }
+        .nav-list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .nav-list a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .nav-list a:hover { opacity: .75; }
+        main {
+            min-height: 390px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 15px;
+            background: #ffffff;
+        }
+        .search-card {
+            width: 100%;
+            max-width: 470px;
+            padding: 30px 20px;
+            text-align: center;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.12);
+        }
+        .search-card h2 { margin: 0 0 25px; font-size: 22px; }
+        #username {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #ffffff;
+            font-size: 15px;
+        }
+        #searchBtn {
+            width: 100%;
+            padding: 13px;
+            border: none;
+            border-radius: 5px;
+            background: #4848bd;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        #searchBtn:hover { background: #39399f; }
+        #result {
+            margin-top: 18px;
+            line-height: 1.8;
+            overflow-wrap: anywhere;
+        }
+        #result p { margin: 8px 0; }
+        #result img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            margin-top: 8px;
+        }
+        .error { color: #c0392b; }
+        footer {
+            padding: 20px;
+            text-align: center;
+            color: white;
+            background: #4848bd;
+        }
+        @media (max-width: 480px) {
+            .nav-list { gap: 15px; }
+            header h1 { font-size: 25px; }
+        }
+    </style>
+    <script src="1_7.js" defer></script>
+</head>
+<body>
+    <header>
+        <h1>GitHub検索</h1>
+        <nav>
+            <ul class="nav-list">
+                <li><a href="../work.html">ホーム</a></li>
+                <li><a href="../contact.html">お問い合わせ</a></li>
+                <li><a href="../work.html">課題</a></li>
+                <li><a href="1_5.html">電卓</a></li>
+                <li><a href="1_7.html">GitHub検索</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="search-card">
+            <h2>GitHubユーザー情報を取得しよう</h2>
+            <input
+                type="text"
+                id="username"
+                placeholder="GitHubユーザー名を入力"
+                autocomplete="off"
+            >
+            <button id="searchBtn" type="button">検索</button>
+            <div id="result" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 私のポートフォリオ</p>
+    </footer>
+</body>
+</html>
